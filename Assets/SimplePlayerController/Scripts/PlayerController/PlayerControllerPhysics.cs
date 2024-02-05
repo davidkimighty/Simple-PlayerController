@@ -1,4 +1,3 @@
-using Broccollie.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -118,11 +117,11 @@ namespace Simple.PlayerController
                 _lookRotation = Quaternion.Euler(_characterCam.FpYawAngle * Vector3.up);
 
             Quaternion currentRotation = _targetBody.rotation;
-            Quaternion targetRotation = Helper.ShortestRotation(_lookRotation, currentRotation);
+            //Quaternion targetRotation = Helper.ShortestRotation(_lookRotation, currentRotation);
 
-            targetRotation.ToAngleAxis(out float angle, out Vector3 axis);
-            float rotationRadians = angle * Mathf.Deg2Rad;
-            _targetBody.AddTorque((axis.normalized * (rotationRadians * _rotationStrength)) - (_targetBody.angularVelocity * _rotationDamper));
+            //targetRotation.ToAngleAxis(out float angle, out Vector3 axis);
+            // float rotationRadians = angle * Mathf.Deg2Rad;
+            // _targetBody.AddTorque((axis.normalized * (rotationRadians * _rotationStrength)) - (_targetBody.angularVelocity * _rotationDamper));
         }
 
         private void Jump()
