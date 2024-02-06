@@ -97,7 +97,7 @@ namespace Simple.PlayerController
             }
             
             float currentSpeed = Vector3.Scale(_controller.velocity, new Vector3(1, 0, 1)).magnitude;
-            _horizontalVel = Mathf.Lerp(currentSpeed, _targetSpeed, _accelerate * Time.deltaTime);
+            _horizontalVel = Mathf.Lerp(currentSpeed, _moveInput.magnitude * _targetSpeed, _accelerate * Time.deltaTime);
 
             Vector3 horizontalMotion = _moveDir * (_horizontalVel * Time.deltaTime);
             Vector3 verticalMotion = Vector3.up * (_verticalVel * Time.deltaTime);
